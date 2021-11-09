@@ -49,7 +49,7 @@ export class ParcelComponent implements OnChanges, OnInit, OnDestroy {
     this.scheduleTask(Action.Mount, () => {
       if (this.mountParcel === null) {
         throw new Error(
-          'single-spa-angular: the [mountParcel] binding is required when using the <parcel> component. You can either (1) import mountRootParcel from single-spa or (2) use the mountParcel prop provided to single-spa applications.',
+          '@essquare/single-spa-angular: the [mountParcel] binding is required when using the <parcel> component. You can either (1) import mountRootParcel from single-spa or (2) use the mountParcel prop provided to single-spa applications.',
         );
       }
 

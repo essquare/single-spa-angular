@@ -21,5 +21,5 @@ export async function createWorkspace<WorkspaceOptions, AppOptions>(
 }
 
 export function createTestRunner(): SchematicTestRunner {
-  return new SchematicTestRunner('single-spa-angular', collectionPath);
+  return new SchematicTestRunner('@essquare/single-spa-angular', collectionPath);
 }

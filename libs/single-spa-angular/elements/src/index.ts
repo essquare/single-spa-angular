@@ -1,6 +1,6 @@
 import { LifeCycles } from 'single-spa';
 import { NgElement } from '@angular/elements';
-import { getContainerElementAndSetTemplate } from 'single-spa-angular/internals';
+import { getContainerElementAndSetTemplate } from '@essquare/single-spa-angular/internals';
 
 import {
   BootstrappedSingleSpaAngularElementsOptions,
@@ -22,7 +22,7 @@ const defaultOptions: BootstrappedSingleSpaAngularElementsOptions = {
 function setPropsService(options: BootstrappedSingleSpaAngularElementsOptions, props: any) {
   if (!options.ngModuleRef || typeof options.ngModuleRef.destroy !== 'function') {
     throw Error(
-      `single-spa-angular/elements: the options.ngModuleRef is not a valid Angular module. Did you call platformBrowserDynamic().bootstrapModule() correctly?`,
+      `@essquare/single-spa-angular/elements: the options.ngModuleRef is not a valid Angular module. Did you call platformBrowserDynamic().bootstrapModule() correctly?`,
     );
   }
 
@@ -55,7 +55,7 @@ async function mount(options: BootstrappedSingleSpaAngularElementsOptions, props
   const element = containerElement.firstElementChild as NgElement;
   if (!element || !element.parentElement) {
     throw Error(
-      `single-spa-angular/elements: the element is not a valid Angular element or does not have a parent.`,
+      `@essquare/single-spa-angular/elements: the element is not a valid Angular element or does not have a parent.`,
     );
   }
   options.elements.set(props.name, element);
@@ -68,7 +68,7 @@ function unmount(options: BootstrappedSingleSpaAngularElementsOptions, props: an
     // `disconnectedCallback()` and Angular will dispose all resources.
     if (!options.elements.has(props.name)) {
       throw Error(
-        `single-spa-angular/elements: the element is not a valid Angular element or does not have a parent.`,
+        `@essquare/single-spa-angular/elements: the element is not a valid Angular element or does not have a parent.`,
       );
     }
     const element = options.elements.get(props.name);

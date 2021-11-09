@@ -10,7 +10,7 @@
       },
       "root": "apps/shop",
       "sourceRoot": "apps/shop/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -79,7 +79,7 @@
       },
       "root": "apps/chat",
       "sourceRoot": "apps/chat/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -148,7 +148,7 @@
       },
       "root": "apps/navbar",
       "sourceRoot": "apps/navbar/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -217,7 +217,7 @@
       },
       "root": "apps/elements",
       "sourceRoot": "apps/elements/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -286,7 +286,7 @@
       },
       "root": "apps/noop-zone",
       "sourceRoot": "apps/noop-zone/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -355,7 +355,7 @@
       },
       "root": "apps/parcel",
       "sourceRoot": "apps/parcel/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -416,11 +416,11 @@
         }
       }
     },
-    "single-spa-angular": {
+    "@essquare/single-spa-angular": {
       "projectType": "library",
       "root": "libs/single-spa-angular",
       "sourceRoot": "libs/single-spa-angular/src",
-      "prefix": "single-spa-angular",
+      "prefix": "@essquare/single-spa-angular",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"

@@ -1,6 +1,6 @@
 import { NgModuleRef } from '@angular/core';
 import { NgElement } from '@angular/elements';
-import { BaseSingleSpaAngularOptions } from 'single-spa-angular/internals';
+import { BaseSingleSpaAngularOptions } from '@essquare/single-spa-angular/internals';
 
 // implementation from https://spin.atomicobject.com/2018/09/10/javascript-concurrency/
 export class Mutex {

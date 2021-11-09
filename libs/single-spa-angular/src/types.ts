@@ -1,6 +1,6 @@
 import { NgModuleRef, Type, NgZone } from '@angular/core';
 import { AppProps } from 'single-spa';
-import { BaseSingleSpaAngularOptions } from 'single-spa-angular/internals';
+import { BaseSingleSpaAngularOptions } from '@essquare/single-spa-angular/internals';
 
 export interface SingleSpaAngularOptions<T = Record<string, unknown>>
   extends BaseSingleSpaAngularOptions {

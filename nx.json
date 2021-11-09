@@ -1,5 +1,5 @@
 {
-  "npmScope": "single-spa-angular",
+  "npmScope": "@essquare/single-spa-angular",
   "affected": {
     "defaultBase": "master"
   },
@@ -45,7 +45,7 @@
     "parcel": {
       "tags": []
     },
-    "single-spa-angular": {
+    "@essquare/single-spa-angular": {
       "tags": []
     }
   }

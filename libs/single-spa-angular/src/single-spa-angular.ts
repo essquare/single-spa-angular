@@ -1,7 +1,7 @@
 import { NgModuleRef, NgZone } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LifeCycles } from 'single-spa';
-import { getContainerElementAndSetTemplate } from 'single-spa-angular/internals';
+import { getContainerElementAndSetTemplate } from '@essquare/single-spa-angular/internals';
 
 import { SingleSpaPlatformLocation } from './extra-providers';
 import { SingleSpaAngularOptions, BootstrappedSingleSpaAngularOptions } from './types';
@@ -20,7 +20,7 @@ const defaultOptions = {
 
 export function singleSpaAngular<T>(userOptions: SingleSpaAngularOptions<T>): LifeCycles<T> {
   if (typeof userOptions !== 'object') {
-    throw Error('single-spa-angular requires a configuration object');
+    throw Error('@essquare/single-spa-angular requires a configuration object');
   }
 
   const options: SingleSpaAngularOptions = {
@@ -29,21 +29,21 @@ export function singleSpaAngular<T>(userOptions: SingleSpaAngularOptions<T>): Li
   };
 
   if (typeof options.bootstrapFunction !== 'function') {
-    throw Error('single-spa-angular must be passed an options.bootstrapFunction');
+    throw Error('@essquare/single-spa-angular must be passed an options.bootstrapFunction');
   }
 
   if (typeof options.template !== 'string' && typeof options.template !== 'function') {
-    throw Error('single-spa-angular must be passed options.template string or function');
+    throw Error('@essquare/single-spa-angular must be passed options.template string or function');
   }
 
   if (!options.NgZone) {
-    throw Error(`single-spa-angular must be passed the NgZone option`);
+    throw Error(`@essquare/single-spa-angular must be passed the NgZone option`);
   }
 
   if (options.Router && !options.NavigationStart) {
     // We call `console.warn` except of throwing `new Error()` since this will not
     // be a breaking change.
-    console.warn(`single-spa-angular must be passed the NavigationStart option`);
+    console.warn(`@essquare/single-spa-angular must be passed the NavigationStart option`);
   }
 
   return {
@@ -91,7 +91,7 @@ async function mount(options: SingleSpaAngularOptions, props: any): Promise<NgMo
 
   if (!(bootstrapPromise instanceof Promise)) {
     throw Error(
-      `single-spa-angular: the options.bootstrapFunction must return a promise, but instead returned a '${typeof bootstrapPromise}' that is not a Promise`,
+      `@essquare/single-spa-angular: the options.bootstrapFunction must return a promise, but instead returned a '${typeof bootstrapPromise}' that is not a Promise`,
     );
   }
 
@@ -99,7 +99,7 @@ async function mount(options: SingleSpaAngularOptions, props: any): Promise<NgMo
 
   if (!module || typeof module.destroy !== 'function') {
     throw Error(
-      `single-spa-angular: the options.bootstrapFunction returned a promise that did not resolve with a valid Angular module. Did you call platformBrowserDynamic().bootstrapModule() correctly?`,
+      `@essquare/single-spa-angular: the options.bootstrapFunction returned a promise that did not resolve with a valid Angular module. Did you call platformBrowserDynamic().bootstrapModule() correctly?`,
     );
   }
 
@@ -116,7 +116,7 @@ async function mount(options: SingleSpaAngularOptions, props: any): Promise<NgMo
   // `zone-less` change detection, if `NgZone` is `noop` then we can skip it.
   if (ngZoneEnabled && options.Router && singleSpaPlatformLocation === null) {
     throw new Error(`
-      single-spa-angular: could not retrieve extra providers from the platform injector. Did you call platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule()?
+    @essquare/single-spa-angular: could not retrieve extra providers from the platform injector. Did you call platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule()?
     `);
   }
 

@@ -103,7 +103,7 @@ function getLibraryName(options: Options | undefined): string {
   if (projectName) return projectName;
 
   console.warn(
-    'Warning: single-spa-angular could not determine a library name to use and has used a default value.',
+    'Warning: @essquare/single-spa-angular could not determine a library name to use and has used a default value.',
   );
   console.info('This may cause issues if this app uses code-splitting or lazy loading.');
   if (!options) {
